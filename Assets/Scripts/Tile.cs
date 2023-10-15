@@ -6,26 +6,32 @@ public class Tile : MonoBehaviour
 {
     public class TileData
     {
-        public string sectionID {  get; set; }
-        public int tileID {  get; set; }
-        public bool decisionTile {  get; set; }
-        public bool endTile { get; set; }
-        public Vector3 tilePosition { get; set; }
+        public string tileID { get; set; }
+        public int tilePosition { get; set; }
+        public bool coinTossTile { get; set; }
+        public bool startingTile { get; set; }
+        public bool decisionTile { get; set; }
+        public bool endingTile { get; set; }
+        public Vector3 tileObjectPosition { get; set; }
     }
 
-    [SerializeField] string sectionID;
-    [SerializeField] int tileID;
+    [SerializeField] string tileID;
+    [SerializeField] int tilePosition;
+    [SerializeField] bool coinTossTile = true;
+    [SerializeField] bool startingTile;
     [SerializeField] bool decisionTile;
-    [SerializeField] bool endTile;
+    [SerializeField] bool endingTile;
 
     public TileData _tileData = new TileData();
 
     private void OnEnable()
     {
-        _tileData.sectionID = sectionID;
         _tileData.tileID = tileID;
+        _tileData.tilePosition = tilePosition;
+        _tileData.coinTossTile = coinTossTile;
+        _tileData.startingTile = startingTile;
         _tileData.decisionTile = decisionTile;
-        _tileData.endTile = endTile;
-        _tileData.tilePosition = transform.position;
+        _tileData.endingTile = endingTile;
+        _tileData.tileObjectPosition = transform.position;
     }
 }

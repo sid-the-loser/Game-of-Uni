@@ -1,68 +1,101 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.Http.Headers;
+using System.Threading;
 using Unity.VisualScripting;
-using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] int playerID;
-    [SerializeField] string sectionID;
-    [SerializeField] int tileID;
+    public int playerID; // player id to identiry every player (configured in the editor)
 
-    float playerSpeed = 5f;
+    [SerializeField] string tileID; // initial tile id (configured in the editor)
+    [SerializeField] int tileNumber; // initial tile number (configured in the editor)
 
-    Dictionary<string, Tile.TileData> tileObjects = new Dictionary<string, Tile.TileData>();
+    int money = 0;
 
-    private void Start()
+    Tile.TileData currentTileData; // current tile data
+
+    int speed = 5; // speed of the player when moving between tiles (only applies to visuals/animation of a player jumping between tiles)
+
+    Dictionary<string, Tile.TileData> _tileData = new Dictionary<string, Tile.TileData>(); // data of every tile in the board
+    GameObject _camera; // camera game object
+
+    void Start()
     {
-        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Tile"))
+        TurnManager.RemovePlayerFinished(playerID);
+        foreach (GameObject tile in GameObject.FindGameObjectsWithTag("Tile"))
         {
-            if (obj != null)
-            {
-                tileObjects[$"{obj.GetComponent<Tile>()._tileData.sectionID}{obj.GetComponent<Tile>()._tileData.tileID}"] = obj.GetComponent<Tile>()._tileData;
-            }
-            else
-            {
-                Debug.Log("Bruh, found a null!");
-            }
+            _tileData[$"{tile.GetComponent<Tile>()._tileData.tileID}{tile.GetComponent<Tile>()._tileData.tilePosition}"] = tile.GetComponent<Tile>()._tileData;
         }
+        currentTileData = _tileData[$"{tileID}{tileNumber}"];
 
-        foreach (string key in tileObjects.Keys)
-        {
-            Debug.Log(key);
-        }
+        _camera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
-    private void Update()
+    void Update()
     {
-        if (TurnManager.currentPlayerID == playerID)
+        if (TurnManager.currentPlayer == playerID && !currentTileData.endingTile)
         {
-            if (!tileObjects[$"{sectionID}{tileID}"].endTile)
+            Hide(false);
+            if (Input.GetKeyDown(KeyCode.Space) && BetweenSceneInputManager.currentInputID == playerID)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+
+                if (currentTileData.coinTossTile)
                 {
-                    if (tileObjects[$"{sectionID}{tileID}"].decisionTile)
-                    {
-                        //something to be done on the decision tile
-                    }
-                    else
-                    {
-                        tileID++;
-                    }
+                    Debug.Log("Heyo" + playerID.ToString());
+
+
+                }
+                else if (currentTileData.decisionTile)
+                {
+
+                }
+                else if (currentTileData.startingTile)
+                {
+                    Debug.Log("Huh?" + playerID.ToString());
+                    tileNumber++;
+                    TurnManager.PlayerTurnEnded();
+                }
+                else
+                {
                 }
             }
-            else
+            else if (Input.GetKeyUp(KeyCode.Space))
             {
-                TurnManager.NextPlayerTurn();
+                BetweenSceneInputManager.currentInputID = playerID;
             }
-            UpdatePosition();
+
+                if (currentTileData.endingTile)
+            {
+                TurnManager.NotePlayerFinished(playerID);
+            }
+            currentTileData = _tileData[$"{tileID}{tileNumber}"];
         }
+        else
+        {
+            Hide(true);
+        }
+
+        UpdatePosition();
     }
 
-    private void UpdatePosition()
+    void UpdatePosition()
     {
-        transform.position = Vector3.Lerp(transform.position, tileObjects[$"{sectionID}{tileID}"].tilePosition, playerSpeed*Time.deltaTime);
+        transform.position = _tileData[$"{tileID}{tileNumber}"].tileObjectPosition;
+        if (TurnManager.currentPlayer == playerID) _camera.transform.position = Vector3.Lerp(_camera.transform.position, new Vector3(0, this.transform.position.y, -10), speed * Time.deltaTime);
+    }
+
+    void Hide(bool value)
+    {
+        this.GetComponent<Renderer>().enabled = !value;
+        Transform parentTransform = transform;
+        foreach (Transform childTransform in parentTransform)
+        {
+            Renderer childRenderer = childTransform.GetComponent<Renderer>();
+            if (childRenderer != null)
+            {
+                childRenderer.enabled = !value;
+            }
+        }
     }
 }

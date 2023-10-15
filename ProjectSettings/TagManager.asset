@@ -45,3 +45,6 @@ TagManager:
   - name: player
     uniqueID: 2595764337
     locked: 0
+  - name: cards
+    uniqueID: 2568090591
+    locked: 0
