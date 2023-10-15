@@ -185,8 +185,11 @@ MonoBehaviour:
   tileID: a
   tilePosition: 5
   coinTossTile: 0
-  startingTile: 1
+  startingTile: 0
   decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 0
+  moneyToTake: 0
   endingTile: 0
 --- !u!1 &390297444
 GameObject:
@@ -214,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 390297444}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.09, y: -6.92, z: 0}
+  m_LocalPosition: {x: 5.46, y: -0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -237,7 +240,63 @@ MonoBehaviour:
   coinTossTile: 0
   startingTile: 0
   decisionTile: 0
-  endingTile: 1
+  oppOnlyTile: 1
+  giveOrTake: 0
+  moneyToTake: 0
+  endingTile: 0
+--- !u!1 &395739356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 395739357}
+  - component: {fileID: 395739358}
+  m_Layer: 0
+  m_Name: Tile (15)
+  m_TagString: Tile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &395739357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395739356}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.15, y: 5.89, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 401253988}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &395739358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395739356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37688af9a9a6854fb8cbaf8e312fa7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileID: a
+  tilePosition: 11
+  coinTossTile: 0
+  startingTile: 0
+  decisionTile: 1
+  oppOnlyTile: 0
+  giveOrTake: 0
+  moneyToTake: 0
+  endingTile: 0
 --- !u!1 &401253986
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,9 +390,12 @@ Transform:
   - {fileID: 529915227}
   - {fileID: 983195758}
   - {fileID: 913230228}
+  - {fileID: 395739357}
   - {fileID: 1528609518}
   - {fileID: 1286418677}
   - {fileID: 390297445}
+  - {fileID: 1100421270}
+  - {fileID: 638674705}
   - {fileID: 1218754427}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -630,6 +692,9 @@ MonoBehaviour:
   coinTossTile: 1
   startingTile: 0
   decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 0
+  moneyToTake: 0
   endingTile: 0
 --- !u!1001 &551897284
 PrefabInstance:
@@ -788,7 +853,63 @@ MonoBehaviour:
   coinTossTile: 1
   startingTile: 0
   decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 0
+  moneyToTake: 0
   endingTile: 0
+--- !u!1 &638674704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 638674705}
+  - component: {fileID: 638674706}
+  m_Layer: 0
+  m_Name: Tile (17)
+  m_TagString: Tile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &638674705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638674704}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.91, y: -6.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 401253988}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &638674706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638674704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37688af9a9a6854fb8cbaf8e312fa7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileID: b
+  tilePosition: 4
+  coinTossTile: 0
+  startingTile: 0
+  decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 0
+  moneyToTake: 0
+  endingTile: 1
 --- !u!1 &673301226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,6 +1121,9 @@ MonoBehaviour:
   coinTossTile: 1
   startingTile: 0
   decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 0
+  moneyToTake: 0
   endingTile: 0
 --- !u!1 &797996881
 GameObject:
@@ -1213,7 +1337,7 @@ Transform:
   m_GameObject: {fileID: 913230227}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.06, y: 5.89, z: 0}
+  m_LocalPosition: {x: -1.65, y: 5.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1235,7 +1359,10 @@ MonoBehaviour:
   tilePosition: 10
   coinTossTile: 0
   startingTile: 0
-  decisionTile: 1
+  decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 0
+  moneyToTake: 0
   endingTile: 0
 --- !u!1001 &944830923
 PrefabInstance:
@@ -1394,6 +1521,9 @@ MonoBehaviour:
   coinTossTile: 1
   startingTile: 0
   decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 0
+  moneyToTake: 0
   endingTile: 0
 --- !u!1 &983195757
 GameObject:
@@ -1444,6 +1574,62 @@ MonoBehaviour:
   coinTossTile: 1
   startingTile: 0
   decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 0
+  moneyToTake: 0
+  endingTile: 0
+--- !u!1 &1100421269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1100421270}
+  - component: {fileID: 1100421271}
+  m_Layer: 0
+  m_Name: Tile (16)
+  m_TagString: Tile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1100421270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100421269}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.31, y: -3.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 401253988}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1100421271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100421269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37688af9a9a6854fb8cbaf8e312fa7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileID: b
+  tilePosition: 3
+  coinTossTile: 0
+  startingTile: 0
+  decisionTile: 0
+  oppOnlyTile: 1
+  giveOrTake: 0
+  moneyToTake: 0
   endingTile: 0
 --- !u!1 &1218754426
 GameObject:
@@ -1494,6 +1680,9 @@ MonoBehaviour:
   coinTossTile: 0
   startingTile: 0
   decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 0
+  moneyToTake: 0
   endingTile: 1
 --- !u!1 &1286418676
 GameObject:
@@ -1543,7 +1732,10 @@ MonoBehaviour:
   tilePosition: 1
   coinTossTile: 0
   startingTile: 0
-  decisionTile: 1
+  decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 0
+  moneyToTake: 0
   endingTile: 0
 --- !u!1 &1437168023
 GameObject:
@@ -1594,6 +1786,9 @@ MonoBehaviour:
   coinTossTile: 1
   startingTile: 0
   decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 0
+  moneyToTake: 0
   endingTile: 0
 --- !u!1 &1490340112
 GameObject:
@@ -1644,6 +1839,9 @@ MonoBehaviour:
   coinTossTile: 0
   startingTile: 1
   decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 1
+  moneyToTake: 500
   endingTile: 0
 --- !u!1 &1528609517
 GameObject:
@@ -1691,9 +1889,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileID: c
   tilePosition: 1
-  coinTossTile: 0
+  coinTossTile: 1
   startingTile: 0
-  decisionTile: 1
+  decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 1
+  moneyToTake: 500
   endingTile: 0
 --- !u!1001 &1553640126
 PrefabInstance:
@@ -1936,6 +2137,9 @@ MonoBehaviour:
   coinTossTile: 1
   startingTile: 0
   decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 0
+  moneyToTake: 0
   endingTile: 0
 --- !u!114 &1986201326
 MonoBehaviour:
@@ -2001,6 +2205,9 @@ MonoBehaviour:
   coinTossTile: 1
   startingTile: 0
   decisionTile: 0
+  oppOnlyTile: 0
+  giveOrTake: 0
+  moneyToTake: 0
   endingTile: 0
 --- !u!1 &4808906368106093798 stripped
 GameObject:

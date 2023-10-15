@@ -13,7 +13,7 @@ public class GameUIManager : MonoBehaviour
     GameObject cardExp;
     GameObject cardTextBox;
 
-    GameObject pausedPlayer;
+    public static bool paused = false;
 
     // Start is called before the first frame update
     void Start()

@@ -11,7 +11,7 @@ public class TurnManager
     static int maxPlayers = 4;
     static List<int> finishedPlayers = new List<int>();
 
-    public static int CoinToss() {  return Random.Range(0, 1); }
+    public static string CoinToss() { if (Random.Range(0, 1) == 1) return "opp"; else return "exp"; }
 
     static void ClearPlayerFinished() {  finishedPlayers.Clear(); }
 

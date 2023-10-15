@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+
         TurnManager.RemovePlayerFinished(playerID);
         foreach (GameObject tile in GameObject.FindGameObjectsWithTag("Tile"))
         {
@@ -30,11 +31,13 @@ public class Player : MonoBehaviour
         currentTileData = _tileData[$"{tileID}{tileNumber}"];
 
         _camera = GameObject.FindGameObjectWithTag("MainCamera");
+
+        money = 0;
     }
 
     void Update()
     {
-        if (TurnManager.currentPlayer == playerID && !currentTileData.endingTile)
+        if (TurnManager.currentPlayer == playerID && !currentTileData.endingTile && !GameUIManager.paused)
         {
             Hide(false);
             if (Input.GetKeyDown(KeyCode.Space) && BetweenSceneInputManager.currentInputID == playerID)
@@ -42,24 +45,40 @@ public class Player : MonoBehaviour
 
                 if (currentTileData.coinTossTile)
                 {
-                    Debug.Log("Heyo" + playerID.ToString());
-
-
+                    Debug.Log("Coin Toss" + playerID.ToString());
+                    if (TurnManager.CoinToss() == "opp")
+                    {
+                        GameUIManager.showCardOpp = true;
+                    }
+                    else
+                    {
+                        GameUIManager.showCardExp = true;
+                    }
+                    GameUIManager.paused = true;
                 }
                 else if (currentTileData.decisionTile)
                 {
+                    Debug.Log("Decision" + playerID.ToString());
 
                 }
-                else if (currentTileData.startingTile)
+                else if (currentTileData.oppOnlyTile)
                 {
-                    Debug.Log("Huh?" + playerID.ToString());
-                    tileNumber++;
-                    TurnManager.PlayerTurnEnded();
+                    Debug.Log("Opp only" + playerID.ToString());
                 }
                 else
                 {
+                    Debug.Log("Nothing" + playerID.ToString());
+                    tileNumber++;
+                    TurnManager.PlayerTurnEnded();
                 }
+
+                if (currentTileData.giveOrTake)
+                {
+                    money += currentTileData.moneyToGT;
+                }
+
             }
+
             else if (Input.GetKeyUp(KeyCode.Space))
             {
                 BetweenSceneInputManager.currentInputID = playerID;
@@ -70,6 +89,10 @@ public class Player : MonoBehaviour
                 TurnManager.NotePlayerFinished(playerID);
             }
             currentTileData = _tileData[$"{tileID}{tileNumber}"];
+        }
+        else if (GameUIManager.paused)
+        {
+            // do some stuff
         }
         else
         {
@@ -97,5 +120,10 @@ public class Player : MonoBehaviour
                 childRenderer.enabled = !value;
             }
         }
+    }
+
+    int GetMoneyValue()
+    {
+        return money;
     }
 }
