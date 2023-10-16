@@ -24,7 +24,7 @@ public class Scoreboard : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && BetweenSceneInputManager.currentInputID == 5)
         {
-            SceneManager.LoadScene("MainGame", LoadSceneMode.Single);
+            SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single);
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {

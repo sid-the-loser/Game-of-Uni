@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour
 {
@@ -13,6 +14,14 @@ public class TitleScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space) && BetweenSceneInputManager.currentInputID == -1)
+        {
+            SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            BetweenSceneInputManager.currentInputID = -1;
+        }
+
     }
 }

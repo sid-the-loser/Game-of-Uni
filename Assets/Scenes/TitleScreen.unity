@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 326758207}
   - component: {fileID: 326758208}
+  - component: {fileID: 326758209}
   m_Layer: 0
   m_Name: Titlescreen
   m_TagString: Untagged
@@ -207,6 +208,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &326758209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326758206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c58dde8ebcee7c4cb55b2f00631c088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1512096116
 GameObject:
   m_ObjectHideFlags: 0

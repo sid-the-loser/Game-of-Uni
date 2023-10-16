@@ -78,13 +78,6 @@ public class Player : MonoBehaviour
                     GameUIManager.paused = true;
                 }
 
-                else if (currentTileData.endingTile)
-                {
-                    TurnManager.NotePlayerFinished(playerID);
-                    TurnManager.PlayerTurnEnded();
-                    Hide(true);
-                }
-
                 else
                 {
                     Debug.Log("Nothing" + playerID.ToString());
@@ -102,6 +95,13 @@ public class Player : MonoBehaviour
             else if (Input.GetKeyUp(KeyCode.Space))
             {
                 BetweenSceneInputManager.currentInputID = playerID;
+            }
+
+            if (currentTileData.endingTile)
+            {
+                TurnManager.NotePlayerFinished(playerID);
+                TurnManager.PlayerTurnEnded();
+                Hide(true);
             }
 
         }
@@ -131,6 +131,7 @@ public class Player : MonoBehaviour
                 {
                     tileID = "b";
                     tileNumber = 1;
+                    TurnManager.PlayerMoney[playerID] -= 1000;
                     GameUIManager.showCardOpp = false;
                     GameUIManager.paused = false;
                     TurnManager.PlayerTurnEnded();
@@ -143,6 +144,7 @@ public class Player : MonoBehaviour
                 {
                     tileID = "c";
                     tileNumber = 1;
+                    TurnManager.PlayerMoney[playerID] += 500;
                     GameUIManager.showCardOpp = false;
                     GameUIManager.paused = false;
                     TurnManager.PlayerTurnEnded();
