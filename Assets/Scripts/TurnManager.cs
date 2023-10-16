@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
+using UnityEngine.SceneManagement;
 
 public class TurnManager
 {
@@ -11,7 +11,12 @@ public class TurnManager
     static int maxPlayers = 4;
     static List<int> finishedPlayers = new List<int>();
 
-    public static string CoinToss() { if (Random.Range(0, 1) == 1) return "opp"; else return "exp"; }
+    public static Dictionary<int, int> PlayerMoney = new Dictionary<int, int> // { <player id> , <money> }
+    {
+        {1, 0}, {2, 0}, {3,  0}, {4, 0}
+    };
+
+    public static string CoinToss() { if (Random.Range(0, 2) > 0) return "opp"; else return "exp"; }
 
     static void ClearPlayerFinished() {  finishedPlayers.Clear(); }
 
@@ -26,7 +31,6 @@ public class TurnManager
             else
             {
                 currentPlayer++;
-                Debug.Log(currentPlayer);
             }
 
             if (finishedPlayers.Contains(currentPlayer))
@@ -36,13 +40,14 @@ public class TurnManager
         }
         else
         {
-            Debug.Log("Game ended! Players still trying to get new turns!!"); 
+            Debug.Log("Game ended! Players still trying to get new turns!!");
             // we can change this to something that might take us to the score board scene or
             // something like that
+            SceneManager.LoadScene("Scoreboard", LoadSceneMode.Single);
         }
     }
 
-    public static void NotePlayerFinished(int playerID) {  finishedPlayers.Add(playerID); }
+    public static void NotePlayerFinished(int playerID) {  if (!finishedPlayers.Contains(playerID)) finishedPlayers.Add(playerID); }
 
     public static void RemovePlayerFinished(int playerID) { finishedPlayers.Remove(playerID); }
     public static bool GetGameEnd()
@@ -55,5 +60,6 @@ public class TurnManager
     {
         ClearPlayerFinished();
         currentPlayer = 1;
+        PlayerMoney = new Dictionary<int, int> {{1, 0}, {2, 0}, {3,  0}, {4, 0}};
     }
 }

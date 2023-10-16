@@ -185,11 +185,10 @@ MonoBehaviour:
   tileID: a
   tilePosition: 5
   coinTossTile: 0
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 0
 --- !u!1 &390297444
 GameObject:
@@ -238,11 +237,10 @@ MonoBehaviour:
   tileID: b
   tilePosition: 2
   coinTossTile: 0
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 1
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 0
 --- !u!1 &395739356
 GameObject:
@@ -291,11 +289,10 @@ MonoBehaviour:
   tileID: a
   tilePosition: 11
   coinTossTile: 0
-  startingTile: 0
   decisionTile: 1
   oppOnlyTile: 0
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 0
 --- !u!1 &401253986
 GameObject:
@@ -489,11 +486,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9084254521678701107, guid: c8708086b5da73f428d4710accf16b56, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.92
+      value: -4.75
       objectReference: {fileID: 0}
     - target: {fileID: 9084254521678701107, guid: c8708086b5da73f428d4710accf16b56, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.74
+      value: 11.89
       objectReference: {fileID: 0}
     - target: {fileID: 9084254521678701107, guid: c8708086b5da73f428d4710accf16b56, type: 3}
       propertyPath: m_LocalPosition.z
@@ -597,7 +594,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -622,7 +619,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 4.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -690,11 +687,10 @@ MonoBehaviour:
   tileID: a
   tilePosition: 8
   coinTossTile: 1
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 0
 --- !u!1001 &551897284
 PrefabInstance:
@@ -742,11 +738,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1834900524026999696, guid: aa31c4d353de35b469147f31a0fd084d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.612
+      value: -6.06
       objectReference: {fileID: 0}
     - target: {fileID: 1834900524026999696, guid: aa31c4d353de35b469147f31a0fd084d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.74
+      value: 11.720001
       objectReference: {fileID: 0}
     - target: {fileID: 1834900524026999696, guid: aa31c4d353de35b469147f31a0fd084d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -851,11 +847,10 @@ MonoBehaviour:
   tileID: a
   tilePosition: 7
   coinTossTile: 1
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 0
 --- !u!1 &638674704
 GameObject:
@@ -904,11 +899,10 @@ MonoBehaviour:
   tileID: b
   tilePosition: 4
   coinTossTile: 0
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 1
 --- !u!1 &673301226
 GameObject:
@@ -1119,11 +1113,10 @@ MonoBehaviour:
   tileID: a
   tilePosition: 1
   coinTossTile: 1
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 0
 --- !u!1 &797996881
 GameObject:
@@ -1358,11 +1351,10 @@ MonoBehaviour:
   tileID: a
   tilePosition: 10
   coinTossTile: 0
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 0
 --- !u!1001 &944830923
 PrefabInstance:
@@ -1406,11 +1398,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6597924642311555803, guid: fae691c4bf318cb45af8da29236d8cb8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.229
+      value: -7.62
       objectReference: {fileID: 0}
     - target: {fileID: 6597924642311555803, guid: fae691c4bf318cb45af8da29236d8cb8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.74
+      value: 11.610001
       objectReference: {fileID: 0}
     - target: {fileID: 6597924642311555803, guid: fae691c4bf318cb45af8da29236d8cb8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1519,11 +1511,10 @@ MonoBehaviour:
   tileID: a
   tilePosition: 4
   coinTossTile: 1
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 0
 --- !u!1 &983195757
 GameObject:
@@ -1551,7 +1542,7 @@ Transform:
   m_GameObject: {fileID: 983195757}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.65, y: 2.21, z: 0}
+  m_LocalPosition: {x: -1.65, y: 2.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1572,11 +1563,10 @@ MonoBehaviour:
   tileID: a
   tilePosition: 9
   coinTossTile: 1
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 0
 --- !u!1 &1100421269
 GameObject:
@@ -1625,11 +1615,10 @@ MonoBehaviour:
   tileID: b
   tilePosition: 3
   coinTossTile: 0
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 1
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 0
 --- !u!1 &1218754426
 GameObject:
@@ -1678,11 +1667,10 @@ MonoBehaviour:
   tileID: c
   tilePosition: 2
   coinTossTile: 0
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 1
 --- !u!1 &1286418676
 GameObject:
@@ -1731,11 +1719,10 @@ MonoBehaviour:
   tileID: b
   tilePosition: 1
   coinTossTile: 0
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 0
 --- !u!1 &1437168023
 GameObject:
@@ -1784,11 +1771,10 @@ MonoBehaviour:
   tileID: a
   tilePosition: 2
   coinTossTile: 1
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 0
 --- !u!1 &1490340112
 GameObject:
@@ -1837,11 +1823,10 @@ MonoBehaviour:
   tileID: a
   tilePosition: 0
   coinTossTile: 0
-  startingTile: 1
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 1
-  moneyToTake: 500
+  moneyToGT: 0
   endingTile: 0
 --- !u!1 &1528609517
 GameObject:
@@ -1890,11 +1875,10 @@ MonoBehaviour:
   tileID: c
   tilePosition: 1
   coinTossTile: 1
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 1
-  moneyToTake: 500
+  moneyToGT: 0
   endingTile: 0
 --- !u!1001 &1553640126
 PrefabInstance:
@@ -1958,11 +1942,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5680833190215496546, guid: 55b087e85c35a4942be9fa30699a5c53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.909
+      value: -8.95
       objectReference: {fileID: 0}
     - target: {fileID: 5680833190215496546, guid: 55b087e85c35a4942be9fa30699a5c53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.74
+      value: 11.660001
       objectReference: {fileID: 0}
     - target: {fileID: 5680833190215496546, guid: 55b087e85c35a4942be9fa30699a5c53, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2135,11 +2119,10 @@ MonoBehaviour:
   tileID: a
   tilePosition: 6
   coinTossTile: 1
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 0
 --- !u!114 &1986201326
 MonoBehaviour:
@@ -2203,11 +2186,10 @@ MonoBehaviour:
   tileID: a
   tilePosition: 3
   coinTossTile: 1
-  startingTile: 0
   decisionTile: 0
   oppOnlyTile: 0
   giveOrTake: 0
-  moneyToTake: 0
+  moneyToGT: 0
   endingTile: 0
 --- !u!1 &4808906368106093798 stripped
 GameObject:

@@ -8,6 +8,7 @@ public class GameUIManager : MonoBehaviour
     public static bool showCardOpp = false;
     public static bool showCardExp = false;
     public static string cardText = string.Empty;
+    public static bool showDecision = false;
 
     GameObject cardOpp;
     GameObject cardExp;
@@ -28,6 +29,7 @@ public class GameUIManager : MonoBehaviour
     {
         cardExp.GetComponent<Renderer>().enabled = showCardExp;
         cardOpp.GetComponent<Renderer>().enabled = showCardOpp;
+
         if (showCardOpp || showCardExp)
         {
             cardTextBox.GetComponent<Text>().text = cardText;
