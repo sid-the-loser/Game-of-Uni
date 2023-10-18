@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameUIManager : MonoBehaviour
@@ -37,6 +38,11 @@ public class GameUIManager : MonoBehaviour
         else
         {
             cardTextBox.GetComponent<Text>().text = string.Empty;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainGame", LoadSceneMode.Single);
         }
     }
 }

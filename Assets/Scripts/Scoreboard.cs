@@ -16,10 +16,10 @@ public class Scoreboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<Text>().text = "";
+        this.GetComponent<Text>().text = "Scores\n\n";
         for (int i = 1; i <= 4; i++)
         {
-            this.GetComponent<Text>().text += $"Player{i} : ${TurnManager.PlayerMoney[i]}\n";
+            this.GetComponent<Text>().text += $"Player{i} : ${TurnManager.PlayerMoney[i]}\n\n";
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && BetweenSceneInputManager.currentInputID == 5)
